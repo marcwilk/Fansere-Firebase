@@ -43,36 +43,29 @@ $color6: #545454; // alt background
 
 (https://trello.com/b/DvXU9dNo/capstone)
 
-1. In App Chat (Sean)  
-- More DB  
-- Post routes  
-2. Profile Page (Marc, Owen)  
-- Picture  
-- Favorite teams (up to 6)  
-- Tag line  
-- Location  
-- Edit bio form  
-- Watch party only  
-3. Sign Up (Ben)  
-- OAuth
-4. Map with sports logos and bar locations (Will)  
-- Hard code bars/restaurants  
-- Pin locations  
-5. Sports Teams Selection Lists    
-- Swipe/add functionality with all logos, colors, Icons  
-- Get route/form  
-6. Backend Clean up and wire to front end (Owen/Sean)  
-- Update to all current info  
-- Chat database  
+*Plan for User*
+-User logs in (OAuth/Bcrypt).
+-Nav bar has map, profile and feed.
+-Directed to profile page. On your profile page, you have access to your profile details which consist of username, profile pic, location, roster, favorite teams, tagline, and total check-ins. All information is editable except for check-ins.
+-Map shows bar locations in area.
+-Roster shows friends and ability to eventually have 1 on 1 chat.
+-Location drop down, input list (Denver, Chicago, New York)
+-Feed is contingent on location selected. Organized by sport and then team with filter options. Feed shows events. Events have options of attending or not (check-in feature/can only check-in to 3 events at a time) along with commenting. Users have ability to click on individual users to add to roster. 14 day cycle of expiration.
+-Events display username, event date, bar location, image of team.
+
+*Plan for Bar*
+-Bar logs in.
+-Nav bar has map, profile, and feed.
+-Bar's profile consists of bar info, location, specials, tagline (own event page potentially).
+-Bar's have access to feed and can create unique posts with daily specials for only Fansere users and see who's all attending their location.
+
 
 ### Technologies
 
-ReactNative, JavaScript, PostgreSQL, Express, Node, NPM, Android Studio, Xcode, HTML, CSS, ReactNative Elements, ReactNative Navigation, ReactNative Maps API, NHL API, Knex, Fetch, OAuth
+ReactNative, JavaScript, Node, NPM, Android Studio, Xcode, HTML, CSS, ReactNative Elements, ReactNative Navigation, ReactNative Maps API, OAuth, Firebase
 
 <a href="https://facebook.github.io/react-native/"><img src="images/react-original.svg" target="_blank" title="React" alt="React" width="15%"></a>
 <a href="https://www.javascript.com/"><img src="images/javascript-original.svg" target="_blank" title="JS" alt="JS" width="15%"></a>
-<a href="https://www.postgresql.org/"><img src="images/postgresql-original.svg" target="_blank" title="PSQL" alt="PSQL" width="15%"></a>
-<a href="https://www.npmjs.com/package/express"><img src="images/express-original.svg" target="_blank" title="Express" alt="Express" width="15%"></a>
 <a href="https://nodejs.org/en/"><img src="images/nodejs-original.svg" target="_blank" title="Node" alt="Node" width="15%"></a>
 <a href="https://npmjs.com"><img src="images/npm-original-wordmark.svg" target="_blank" title="NPM" alt="NPM" width="15%"></a>
 <a href="https://www.android.com/"><img src="images/android-original.svg" target="_blank" title="Android" alt="Android" width="15%"></a>
