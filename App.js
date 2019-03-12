@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import firebase from 'firebase'
 import SignUp from './components/auth/signup'
-import ItWorked from './components/auth/itworked'
+import TabNavigator from './components/router'
 
 // Initialize Firebase
 var config = {
@@ -16,34 +16,35 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      userEmail: null
+      userEmail: null,
+      userId: null
     }
     //this.authCheck = this.authCheck.bind(this)
     //this.toggleLogin = this.toggleLogin.bind(this)
     this.signIn = this.signIn.bind(this)
   }
 
-  authCheck() {
-    firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      var displayName = user.displayName;
-      var email = user.email;
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
-      console.log(email)
-      this.setState({auth: true})
-      // ...
-    } else {
-      // User is signed out.
-      // ...
-      console.log('Not today fuckface')
-    }
-   })
-  }
+  // authCheck() {
+  //   firebase.auth().onAuthStateChanged(function(user) {
+  //   if (user) {
+  //     // User is signed in.
+  //     var displayName = user.displayName;
+  //     var email = user.email;
+  //     var emailVerified = user.emailVerified;
+  //     var photoURL = user.photoURL;
+  //     var isAnonymous = user.isAnonymous;
+  //     var uid = user.uid;
+  //     var providerData = user.providerData;
+  //     console.log(email)
+  //     this.setState({auth: true})
+  //     // ...
+  //   } else {
+  //     // User is signed out.
+  //     // ...
+  //     console.log('Not today fuckface')
+  //   }
+  //  })
+  // }
 
   componentDidMount() {
     this.authListener()
@@ -52,7 +53,11 @@ export default class App extends Component {
   authListener() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        console.log(user.email)
+        console.log(user.uid)
         this.setState({userEmail: user.email})
+        this.setState({userId: user.uid})
+        console.log(this.state.userId)
 
       } else {
         console.log('no user signed in')
@@ -61,19 +66,7 @@ export default class App extends Component {
       })
   }
 
-  toggleLogin() {
-    this.state.auth ? this.setState({auth: false}) : this.setState({auth: true})
-  }
-
-  async componentDidMount() {
-    firebase.auth().onAuthStateChanged(user => {
-      //user ? this.setState({auth: true}) : this.setState({auth: false})
-      })
-  }
-
   signIn(email, password) {
-    //console.log(email, password)
-    //console.log(this.state.userEmail)
     firebase.auth().signInWithEmailAndPassword(email, password)
       .catch(function(error) {
         // Handle Errors here.
@@ -94,14 +87,14 @@ export default class App extends Component {
     })
   }
 
-  logOut() {
-    firebase.auth().signOut()
-  }
+  // logOut() {
+  //   firebase.auth().signOut()
+  // }
 
   render() {
     return (
       <View style={styles.container}>
-        {this.state.userEmail ? <TabNavigator /> : <SignUp signIn={this.signIn} signUp={this.signUp} toggleLogin={this.toggleLogin}/>}
+        {this.state.userEmail ? <TabNavigator /> : <SignUp signIn={this.signIn} signUp={this.signUp} />}
       </View>
     );
   }
