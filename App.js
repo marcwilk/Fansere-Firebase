@@ -6,9 +6,9 @@ import TabNavigator from './components/router'
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyAtrHjiBMy9NzVe0gE34xfnscPf37LJKoM",
-  databaseURL: "https://fir-fansere.firebaseio.com",
-  projectId: "fir-fansere",
+  apiKey: "AIzaSyBu6OQLFGgghbxr-i7jiIdMHoToNIf3nG0",
+  databaseURL: "https://fansere-application.firebaseio.com",
+  projectId: "fansere-application",
 };
 firebase.initializeApp(config);
 
