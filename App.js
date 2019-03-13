@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import { Container, Content, Icon, Thumbnail, Header, Left, Right, Body } from 'native-base'
 import firebase from 'firebase'
 import SignUp from './components/auth/signup'
 import TabNavigator from './components/router'
