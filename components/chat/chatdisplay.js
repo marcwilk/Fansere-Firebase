@@ -3,7 +3,6 @@ import { View, StyleSheet, Text, TextInput, Button } from 'react-native'
 import firebase from 'firebase'
 import 'firebase/firestore'
 
-
 export default class Chatdisplay extends React.Component {
   constructor(props) {
     super(props)
@@ -12,7 +11,6 @@ export default class Chatdisplay extends React.Component {
       conversations: []
     }
   }
-
 
   componentDidMount() {
     firebase.firestore().collection('conversations')
@@ -30,7 +28,6 @@ export default class Chatdisplay extends React.Component {
       })
   }
 
-
   render() {
     return (
       <View style={styles.container}>
@@ -38,7 +35,6 @@ export default class Chatdisplay extends React.Component {
       </View>
     )
   }
-
 }
 
 const styles = StyleSheet.create({
@@ -46,7 +42,5 @@ const styles = StyleSheet.create({
     marginTop: 50,
     width: '100%',
     padding: 20,
-
-
   }
 })

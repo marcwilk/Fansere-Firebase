@@ -8,7 +8,6 @@ export default class ItWorked extends React.Component {
     this.state = {
       email: '',
       password: '',
-
     }
   }
 
