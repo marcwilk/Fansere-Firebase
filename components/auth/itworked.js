@@ -18,7 +18,7 @@ export default class ItWorked extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Logged In</Text>
+        <Text>Logged In Honestly Where Can I Buy a Blowjob?</Text>
         <Button
           title="Log out"
           onPress={() => this.logOut()}
